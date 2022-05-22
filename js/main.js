@@ -1,8 +1,9 @@
-let allBoxes = document.querySelectorAll(".main-box #box");
-let allUls = document.querySelectorAll("#verDev #verUl");
-let allLis = document.querySelectorAll("#verUl #verLi");
-let allShow = document.querySelectorAll(".container .box-container div .box");
-let boxContainer = document.getElementById("box-container");
+let allBoxes = document.querySelectorAll("#choose-age-item");
+let allUls = document.querySelectorAll("#package-section-list");
+let allLis = document.querySelectorAll("#package-section");
+let allShow = document.querySelectorAll(".package-section-description");
+let boxContainer = document.getElementById("package-section-list-wrapper");
+// console.log(allShow)
 allBoxes.forEach((e) => {
   e.addEventListener("click", function () {
     for (let i = 0; i < allBoxes.length; i++) {
@@ -15,6 +16,7 @@ allBoxes.forEach((e) => {
     allShow.forEach((e) => {
       e.style.display = "none";
     });
+    console.log(e.getAttribute("data-box"))
     document.querySelector(e.getAttribute("data-box")).style.display = "flex";
     for (let i = 0; i < allLis.length; i++) {
       allLis[i].classList.remove("active");
