@@ -1,4 +1,4 @@
-/* Start Global R#package-section-listes */
+/* Start Global Rules */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -39,7 +39,7 @@ body {
         width: 1170px;
     }
 }
-/* End Global R#package-section-listes */
+/* End Global Rules */
 .section-container {
     background-color: #f5f5f5;
     padding-top: 3rem;
