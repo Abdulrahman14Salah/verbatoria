@@ -1,25 +1,23 @@
-let allBoxes = document.querySelectorAll("#choose-age-item");
-let allUls = document.querySelectorAll("#package-section-list");
-let allLis = document.querySelectorAll("#package-section");
-let allShow = document.querySelectorAll(".package-section-description");
-let boxContainer = document.getElementById("package-section-list-wrapper");
-// console.log(allShow)
-allBoxes.forEach((e) => {
+let choose_age_items = document.querySelectorAll("#choose-age-item");
+let package_section_list = document.querySelectorAll("#package-section-list");
+let package_section = document.querySelectorAll("#package-section");
+let package_section_description = document.querySelectorAll(".package-section-description");
+choose_age_items.forEach((e) => {
   e.addEventListener("click", function () {
-    for (let i = 0; i < allBoxes.length; i++) {
-      allBoxes[i].classList.remove("active");
+    for (let i = 0; i < choose_age_items.length; i++) {
+      choose_age_items[i].classList.remove("active");
     }
     this.classList.toggle("active");
-    for (let i = 0; i < allUls.length; i++) {
-      allUls[i].style.display = "none";
+    for (let i = 0; i < package_section_list.length; i++) {
+      package_section_list[i].style.display = "none";
     }
-    allShow.forEach((e) => {
+    package_section_description.forEach((e) => {
       e.style.display = "none";
     });
     console.log(e.getAttribute("data-box"))
     document.querySelector(e.getAttribute("data-box")).style.display = "flex";
-    for (let i = 0; i < allLis.length; i++) {
-      allLis[i].classList.remove("active");
+    for (let i = 0; i < package_section.length; i++) {
+      package_section[i].classList.remove("active");
       if (e.getAttribute("data-box") == ".ecological") {
         document.querySelector(".liOne").classList.add("active");
         document.querySelector(".oneOne").style.display = "block";
@@ -39,14 +37,14 @@ allBoxes.forEach((e) => {
     }
   });
 });
-allLis.forEach((e) => {
+package_section.forEach((e) => {
   e.addEventListener("mouseenter", function () {
-    allShow.forEach((e) => {
+    package_section_description.forEach((e) => {
       e.style.display = "none";
     });
     document.querySelector(e.dataset.show).style.display = "block";
-    for (let i = 0; i < allLis.length; i++) {
-      allLis[i].classList.remove("active");
+    for (let i = 0; i < package_section.length; i++) {
+      package_section[i].classList.remove("active");
     }
     e.classList.add("active");
   });
@@ -61,7 +59,7 @@ function app(x) {
       e.classList.remove("open");
     });
   } else {
-    allBoxes.forEach((e) => {
+    choose_age_items.forEach((e) => {
       e.addEventListener("click", function () {
         document
           .querySelector(".mobile-age-package__wrapper" + e.dataset.box)
